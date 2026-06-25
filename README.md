@@ -90,7 +90,8 @@ Now after all that, every new variable, requires:
 2. mapping, parsing, transforming
 3. adding to schema
 4. adding to types
-5. if you use config in tests, you need it there too
+5. if you use config in tests, you need it there too, also need the way to create config for testing, usually dev .env acceptable for testing, but needs some overriding.
+
 I want to reduce overhead and complexity but leave strictness, fast-access.
 
 ## Tedious hand env remapping
