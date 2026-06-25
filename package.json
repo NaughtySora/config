@@ -1,0 +1,27 @@
+{
+  "name": "config",
+  "version": "0.1.0",
+  "author": "NaughtySora <naughtysora@proton.me>",
+  "license": "MIT",
+  "description": "a strict, immutable, runtime-validated data tree with fail-fast property access",
+  "main": "main.js",
+  "types": "main.d.ts",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "config",
+    "strict",
+    "immutable"
+  ],
+  "files": [
+    "lib/",
+    "main.d.ts"
+  ],
+  "scripts": {
+    "test": "c8 node ./test/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "c8": "^11.0.0",
+    "typescript": "^6.0.3"
+  }
+}
