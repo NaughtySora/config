@@ -16,7 +16,7 @@ help me.
 Config will evolve time to time during usage on different projects and tech stacks.
 I don't expect first take to be perfect fit even for myself.
 I want to show usage with different environments and touch specific sides of development,
-from ts like business logic and currently wide-used tech stack and pure js system development.
+from ts like business logic and currently wide-used tech stack to pure js system development.
 
 ## Schema, validation and types
 When i first wanted to create a config, i was look to some sort of simple schema validation.
@@ -43,6 +43,7 @@ const config = {
     port: parseInt(process.env.HTTP_CODE, 10),
   },
 };
+
 ```
 2. type it
 ```ts
@@ -57,6 +58,7 @@ const config = {
     },
   } satisfies Config;
 ```
+
 3. create schema
 ```js
 const json = {
