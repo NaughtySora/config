@@ -47,4 +47,10 @@ describe('env - load', () => {
       },
     );
   });
+
+  it('invalid - empty', () => {
+    assert.throws(() => load(), { message: "load prefix is required" });
+    assert.throws(() => load(''), { message: "load prefix is required" });
+    assert.deepEqual(load('%'), {});
+  });
 });
