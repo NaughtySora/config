@@ -2,7 +2,7 @@
 
 const { loadEnvFile, env } = require('node:process');
 const { describe, it } = require("node:test");
-const { load } = require("../lib/env.js");
+const { load } = require("../main");
 const { Buffer } = require('node:buffer');
 const assert = require('node:assert/strict');
 loadEnvFile('.env');
@@ -31,20 +31,20 @@ describe('env - load', () => {
   });
 
   it('with types', () => {
-    // $: INT_SIZE = 33
-    // $: HEX_HEX = 0xDeadBeef
-    // $: OCT_OCT_VALUE = 755
-    // $: BINARY_ANSWER =00101010
-    // $: FLOAT_DEEP_FLOAT_VALUE = 33.35123
-    // $: BIG_BIGINT = 12456842348230948230948230942309489234832904823094
-    // $: JSON_USER_ADDRESS = { "street": "abc 12", "city": "New York", "Country": "USA" }
-    // $: BOOL_HTTP_DEBUG = true
-    // $: BUFFER_SERVICE0_SECRET = unicode_secret_for_some_reason
-    // $: BUFFER64_SERVICE1_SECRET = 40bBaUZ + q7c / WMv3GlnHHA ==
-    // $: BUFFERHEX_SERVICE2_SECRET =018d49ff7f7cedf0edf17d90d224d6f9
-    // $: BUFFER64URL_SERVICE3_SECRET = _3md6vtKJE2vBrfE7XX7rg
-    // $: NULL_NULLABLE_1 = 1
-    // $: UNDEFINED_NULLABLE_2 = 1
+    // $:INT_SIZE = 33
+    // $:HEX_HEX = 0xDeadBeef
+    // $:OCT_OCT_VALUE = 755
+    // $:BINARY_ANSWER =00101010
+    // $:FLOAT_DEEP_FLOAT_VALUE = 33.35123
+    // $:BIG_BIGINT = 12456842348230948230948230942309489234832904823094
+    // $:JSON_USER_ADDRESS = { "street": "abc 12", "city": "New York", "Country": "USA" }
+    // $:BOOL_HTTP_DEBUG = true
+    // $:BUFFER_SERVICE0_SECRET = unicode_secret_for_some_reason
+    // $:BUFFER64_SERVICE1_SECRET = 40bBaUZ + q7c / WMv3GlnHHA ==
+    // $:BUFFERHEX_SERVICE2_SECRET =018d49ff7f7cedf0edf17d90d224d6f9
+    // $:BUFFER64URL_SERVICE3_SECRET = _3md6vtKJE2vBrfE7XX7rg
+    // $:NULL_NULLABLE_1 = 1
+    // $:UNDEFINED_NULLABLE_2 = 1
     assert.deepEqual(load('$'),
       {
         bigint: 12456842348230948230948230942309489234832904823094n,

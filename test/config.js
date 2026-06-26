@@ -4,6 +4,13 @@ const assert = require("node:assert/strict");
 const { describe, it } = require("node:test");
 const { register, copy } = require('../main');
 
+// some limitations with this approach
+// toString and other properties will lose their object context
+// i don't want to add this binding and conditions for proxy getter
+// dropping proxy is also seems not reasonable
+// i will leave it like this till i really need those methods, 
+// or its really uncomfortable to use
+
 describe('config', () => {
   it('register', () => {
     const valid = {

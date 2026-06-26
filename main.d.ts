@@ -38,3 +38,5 @@ export declare function register<T extends object>
 
 export declare function copy<T extends object, S extends object>
   (target: T, source: S): Readonly<DeepRequired<Merge<T, S>>>;
+
+export declare function load(prefix: string): Record<string, any>;
