@@ -3,6 +3,6 @@
 const { resolve } = require("node:path");
 const { globSync } = require("node:fs");
 
-const files = globSync('*.js', { cwd: __dirname, exclude: ['index.js'] });
+const files = globSync('*.js', { cwd: __dirname, exclude: ['index.js', 'nestjs'] });
 
 for (const file of files) require(resolve(__dirname, file));
