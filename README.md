@@ -1,6 +1,13 @@
 # Config
 a strict, immutable, runtime-validated data tree with fail-fast property access
 
+#### Post-notes
+1. For pure framework independent and js oriented is pretty good.
+2. Nestjs requires work nasty workarounds, additional proxy overhead.
+2.1. Could use loader for env with Nestjs, but its better write something for nestjs specifically,
+i don't want to use @nest/config, it has too many questionable dependencies also code itself is not
+what want to use.
+
 ## Motivation and intent
 - as someone said, "libraries, frameworks and repositories, first-hand resolve 
 problems of the creators of those technologies".

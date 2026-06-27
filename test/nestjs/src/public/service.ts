@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
-import { Config } from "../config";
+import { ConfigService } from "../config";
 
 @Injectable()
 export class Service {
-  constructor(private readonly config: Config) {
-    console.log(config);
+  constructor(private readonly config: ConfigService) {
+    console.log(config.http.port);
   }
 
   async hello() {

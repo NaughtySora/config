@@ -17,7 +17,8 @@
     "main.d.ts"
   ],
   "scripts": {
-    "test": "c8 node ./test/index.js"
+    "test": "c8 node ./test/index.js",
+    "test:nest": "npx ts-node test/nestjs/main.ts"
   },
   "devDependencies": {
     "@nestjs/common": "^11.1.27",

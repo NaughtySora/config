@@ -1,7 +1,8 @@
 import { load, register } from '../../../../main';
 import { Global, Module } from '@nestjs/common';
 
-export abstract class Config {
+// can generate this
+export abstract class ConfigService {
   abstract http: {
     port: number;
   };
@@ -10,14 +11,30 @@ export abstract class Config {
 
 const config = register(load('&'));
 
+const nest = new Set([
+  'onModuleInit',
+  'onApplicationBootstrap',
+  'onModuleDestroy',
+  'beforeApplicationShutdown',
+  'onApplicationShutdown',
+  'then',
+]);
+
+const adapter = (config: any, redirect: Set<string>) => new Proxy({}, {
+  get(_: any, key: string) {
+    if (redirect.has(key)) return;
+    return config[key];
+  }
+})
+
 @Global()
 @Module({
   providers: [
     {
-      provide: Config,
-      useValue: config,
+      provide: ConfigService,
+      useValue: adapter(config, nest),
     }
   ],
-  exports: [Config],
+  exports: [ConfigService],
 })
 export class ConfigModule { }
